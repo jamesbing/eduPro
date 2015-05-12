@@ -1,0 +1,56 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0037)http://2school.wygk.cn/admin/left.htm -->
+<html>
+
+<head></head>
+<body>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<TABLE class=tableborder cellSpacing=1 cellPadding=3 width="95%"
+		align=center border=0>
+		<TBODY>
+			<TR>
+				<TH height=24><font color="red">【查看用户状态】</font>
+				</TD>
+			</TR>
+			<TR>
+				<TD class=forumrow><font color="red">请输入用户序列号或者用户名，以查看用户状态</font>
+				</TD>
+			</TR>
+
+		</TBODY>
+	</TABLE>
+	<BR>
+	<TABLE cellSpacing=1 cellPadding=3 width="95%" align=center
+		bgColor=#6ab6b6 border=0>
+		<form name="checkIfActived" action="../checkIfActived" method = "post">
+		<TBODY>
+			<TR>
+				<TH colSpan=2 height=24>
+				<td></TD>
+			</TR>
+			<TR>
+				<TD class=forumrow width="30%" height=24>用户名或用户序列号：</TD>
+				<TD class=forumrowhighlight width="70%" height=24><input
+					type="text" name="userMark">
+				</TD>
+			</TR>
+			<TR>
+				<TD class=forumrow width="30%" height=24></TD>
+				<TD class=forumrowhighlight width="70%" height=24><input
+					type="submit" name="submit" value="查询">&nbsp&nbsp
+					
+				</TD>
+			</TR>
+		</TBODY>
+		</form>
+
+	</TABLE>
+</body>
+</html>

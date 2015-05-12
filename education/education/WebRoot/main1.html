@@ -1,0 +1,605 @@
+<HTML xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<HEAD>
+<meta name="Microsoft Theme 2.00" content="indust 111">
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./Personal%20Web%20Page_files/filelist.xml">
+<TITLE>Cache Address Bit Pattern and Graphical Representation</TITLE>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Navin Vemuri, UMass</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Navin Vemuri UMass</o:LastAuthor>
+  <o:Revision>1</o:Revision>
+  <o:TotalTime>6</o:TotalTime>
+  <o:Created>1999-12-24T05:10:00Z</o:Created>
+  <o:LastSaved>1999-12-24T05:10:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Lines>1</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>0</w:Zoom>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:"Trebuchet MS";
+	panose-1:2 11 6 3 2 2 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:7 0 0 0 19 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Trebuchet MS";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+h1
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Trebuchet MS";
+	color:#000066;
+	mso-font-kerning:16.0pt;
+	font-weight:normal;
+	mso-bidi-font-weight:bold;}
+h2
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Trebuchet MS";
+	color:#666699;
+	font-weight:normal;
+	mso-bidi-font-weight:bold;
+	mso-bidi-font-style:italic;}
+h3
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:14.0pt;
+	font-family:"Trebuchet MS";
+	color:#990000;
+	font-weight:normal;
+	mso-bidi-font-weight:bold;}
+h4
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:"Trebuchet MS";
+	color:#000066;
+	font-weight:normal;
+	mso-bidi-font-weight:bold;}
+h5
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:5;
+	font-size:10.0pt;
+	font-family:"Trebuchet MS";
+	color:#666699;
+	font-weight:normal;
+	mso-bidi-font-weight:bold;
+	mso-bidi-font-style:italic;}
+h6
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:6;
+	font-size:8.0pt;
+	font-family:"Trebuchet MS";
+	color:#990000;
+	font-weight:normal;
+	mso-bidi-font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:#3366CC;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#666666;
+	text-decoration:underline;
+	text-underline:single;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1058"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+
+
+<SCRIPT language="JavaScript">
+
+// Opens a new window, mainly for help
+
+function newwindow() {
+	//alert();
+        newWindow = open("help.html","New_Window","width=700,height=700,scrollbars=yes,resizable=1");    
+        //newWindow.document.write("<H1><CENTER>Help is coming...</center></H1>");      
+	//newWindow.document.writeln("1...2... 3...");
+        newWindow.document.close();
+     }
+
+// Gets total number of bits in the address bit pattern
+
+function TotalBits(memsize)
+{
+	Totnobits = Math.log(memsize)/Math.LN2;
+	return Totnobits;
+}
+	
+// Gets number of offset bits
+
+function OffsetBits(blocksize)
+{   
+	Offnobits = Math.log(blocksize)/Math.LN2;
+	return Offnobits;
+}
+
+// Modulus generating function 
+
+function modulus(a,b)
+{
+ c = a/b;
+ d = Math.floor(c);
+ x = Math.ceil(c);
+ y = x - c;
+ if (c > 1) 
+  { 
+    	e = a - (d*b);
+  }
+ if (y == 0)
+  {
+        e = 0;
+  }
+ if (c < 1)
+  {
+   	e = a;
+  }
+ return e;
+}
+
+// gets number of index bits for direct mapping
+
+function IndexBitsDirect(cachesize, blocksize)
+{
+	Indexnobits = (Math.log(cachesize)/Math.LN2) - (Math.log(blocksize)/Math.LN2);
+        return Indexnobits;
+}
+
+// get number of indexbits for set associative mapping
+
+function IndexBitsSetAss(cachesize, blocksize, setsize)
+{
+	Indexnobits = Math.log(cachesize)/Math.LN2 - (Math.log(blocksize)/Math.LN2 + Math.log(setsize)/Math.LN2);
+	return Indexnobits;
+}
+
+
+// This is the diagram for drawing the Cache table as required
+
+
+// Makes the table pattern for the given data
+
+function MakePattern(offsetbits, indexbits, tagbits)
+{
+	count = 0;
+	bitno = offsetbits + indexbits + tagbits - 1;
+        row = "<br><br><br><center><TABLE HEIGHT = 75 BORDER><TR>\n"
+	widthofcell = 600/(offsetbits + indexbits + tagbits);
+	row += "<TD bgcolor = #DCDCDD COLSPAN = " + tagbits + "><center>TAG</center></TD>\n"
+	row += "<TD bgcolor = #DCDCDD COLSPAN = " + indexbits + "><center>INDEX</center></TD>\n"
+	row += "<TD bgcolor = #DCDCDD COLSPAN = " + offsetbits + "><center>OFFSET</center></TD></TR>\n<TR>\n" 
+	for (count = 0; count < tagbits; count++) 
+	  {
+		row += "<TD width = " + 22 + " bgcolor = #EBEA9D><center>" + bitno + "</center></TD>\n"
+	        bitno = bitno - 1;
+	  }
+	count = 0;
+	for (count = 0; count < indexbits; count++) 
+	  {
+		row += "<TD width = " + 22 + " bgcolor = #EBDACD><center>" + bitno + "</center></TD>\n"
+	   	bitno = bitno - 1;
+	  }
+	for (count = 0; count < offsetbits; count++) 
+	  {
+		row += "<TD width = " + 22 + " bgcolor = #EBFABE><center>" + bitno + "</center></TD>\n"
+	 	bitno = bitno - 1;
+	  }
+        row += "</TR>\n"
+        row += "<TR><TD bgcolor = #DCDCDD COLSPAN = "+tagbits+"><center>Compare Bits</center></TD><TD bgcolor = #DCDCDD COLSPAN = "+indexbits+"><center>Set Select Bits</center></TD><TD bgcolor = #DCDCDD COLSPAN = "+offsetbits+"><center>Byte Select Bits</center></TD></TR>\n" 
+	row += "</TABLE></CENTER>\n<br><br><br>\n"
+	return row;
+}
+
+
+// Writes down the calculations for deriving the bit pattern in a table BELOW the Address Bit Pattern
+ 
+function WriteCalculations(totalbits, offsetbits, indexbits, tagbits, memsize, cachesize, blocksize, setsize,direct,setassoc)
+{
+	
+	calc = "<CENTER><TABLE HEIGHT = 250 WIDTH = 55%><TR>\n"
+        calc += "<TD> The <font color = blue>Compare Bits</font> are compared with the corresponding Tag Bits in the Cache Directory. <br> The <font color = blue>Set Select Bits</font> are used to select a particular Set in the Cache. <br> The <font color = blue>Byte Select Bits</font> are used to select a particular byte in the accessed block.</TD></TR>\n"
+	calc += "<TR><TD>\n"
+	calc += "Memory size = " + memsize.options[memsize.selectedIndex].text + " = 2<font color = red>\n<big><sup>"+totalbits+"</sup></big></font><br>\n"	
+	calc += "Block size = " + blocksize.options[blocksize.selectedIndex].text + "ytes = 2<big>\n<font color = red><sup>"+offsetbits+"</sup></font></big><br><br>\n"
+	if (direct)
+		{
+		   calc += "Number of blocks in cache = Cache size/Block size = "+ cachesize.options[cachesize.selectedIndex].text +"/" +blocksize.options[blocksize.selectedIndex].text+" = 2<sup>"+(tagbits+indexbits)+"</sup>/2<sup>\n" + offsetbits +"</sup> = 2<big><font color = red><sup>"+indexbits+"</sup></font></big><br><br>\n"
+		}
+
+	if (setassoc)
+		{
+		  setbits = (Math.log(setsize.options[setsize.selectedIndex].value)/Math.LN2);  
+		  calc += "Number of sets in cache = Cache size/(Set size * Block size) = "+ cachesize.options[cachesize.selectedIndex].text +"/(" +setsize.options[setsize.selectedIndex].text+" * "+blocksize.options[blocksize.selectedIndex].text+") = 2<sup>"+(tagbits+indexbits)+"</sup>/(2<sup>" + setbits +"</sup> * 2<sup>"+offsetbits+"</sup>) = 2<big><font color = red><sup>"+indexbits+"</sup></font></big><br><br>\n"
+		
+		}
+
+	calc += "Number of bits in Tag = Total bits - Index bits - Offset bits = <font color = blue>"+totalbits+"-"+indexbits+"-"+offsetbits+"</font> =<big><font color = red> "+tagbits+"</font></big><br>\n"
+	calc +=	"</TD></TR></TABLE></CENTER>\n"
+
+	return calc;
+}
+
+
+function DrawCache(assnumber,associativity, rows, columns) 
+{	
+	
+	lower = "\n"
+	lower += Drawtable(rows, 6, 200, associativity, assnumber);   		  	
+        return lower;
+}
+
+
+// A function to determine the block number of that particular cell
+
+function findblock(colcount,columns)
+{
+        a = modulus((colcount+1),columns);
+	if (a != 0) {
+	c =  ((colcount+1)/columns) - Math.floor(((colcount+1)/columns));
+	b =  ((colcount+1)/columns) - c;
+	}
+        if (a == 0) {
+	b = ((colcount+1)/columns);
+	}
+	return b;
+}
+	
+
+
+// Draws the Cache Memory Organization in Table format
+
+function Drawtable(rows, columns, tablewidth, associativity, assnoe)
+{
+	rowcount = 0;
+	colcount = 0;
+
+	startblink = " "
+	endblink = " "
+
+	cellwid = columns/tablewidth;
+	table = " "
+	table += "<center><TABLE BORDER HEIGHT = 200>"
+
+	if (associativity == 1) {
+	table += "<TR>\n"
+	for (i=0; i < assnoe; i++) {
+	if (i == 0) {
+	table += "<TD> </TD><TD COLSPAN = "+columns+" bgcolor = #DCDCDD>BLOCK "+ i +"</TD>\n" }
+	else {
+        table += "<TD COLSPAN = "+columns+" bgcolor = #DCDCDD>BLOCK "+ i +"</TD>\n" }
+	}
+	table += "</TR>\n"
+	}
+	
+	
+	count = 0;
+	for (rowcount=0; rowcount < rows; rowcount++)
+	   {       
+
+	      table += "<TR>\n"	
+	      count = rowcount;
+		
+	      if (associativity == 1) {
+	      table += "<TD BGCOLOR = white><center>SET "+rowcount+"</center></TD>\n" 
+ 		}
+		
+               
+	      if (associativity == 0) {
+	      	table += "<TD BGCOLOR = white><center>SET "+rowcount+"</center></TD>\n" 
+	      }
+	       
+	      for (colcount=0; colcount < (columns*assnoe); colcount++)
+		{
+		  //if (colcount > 1) {
+		  baadiya = modulus((colcount),columns); //}
+
+		  if (associativity == 0) {
+		  if (count == rowcount)
+		     {  
+			color = "#DCDCDD" 
+		     }
+		  else 
+		     { 
+			color = "#FFFFCC"
+		     }
+		   }
+
+		  if (associativity == 1) {
+		 
+		  if ((baadiya == 0) || (colcount == 0)) //count == rowcount+((i-1)*rows))
+		     {  
+		        //startblink = "<BLINK><font color = blue>" 
+                        startblink = "<strong>"
+			color = "#DCDCDD" 
+                        //endblink = "</font></BLINK>"
+                        endblink = "</strong>"
+		     }
+		  else 
+		     { 
+		        startblink = " "
+			color = "#FFFFCC"
+			endblink = " "
+		     }
+		 
+		   }
+		  
+		  
+		  if (associativity == 1) {
+		  block = findblock(colcount, columns);
+		  if ((baadiya == 0) || (colcount == 0)) {
+		  count =  block*rows + rowcount; }
+			}
+		    
+ 		  table += "<TD BGCOLOR = " + color + " WIDTH = " + cellwid + "><center>"+startblink+count+endblink+"</center></TD>\n"
+	
+		  if (associativity == 0) {
+		  count = count + rows;		  
+		  }
+		  if (associativity == 1) {
+	          count += (assnoe*rows);
+		  }
+		}
+  
+	    table += "</TR>\n"
+	}	  
+	table += "</TABLE></center>\n"
+	return table;
+}
+
+	
+
+// this is the main function
+
+function DisplayCache(form)    {
+
+	parent.frames[1].document.open()	
+	Upper = "<HTML>\n<HEAD>\n<TITLE>OUTPUT</TITLE>\n</HEAD>\n<BODY bgcolor = white>\n"
+
+	IsDirect = form.map[0].checked;
+	IsSetAssoc = form.map[1].checked;
+			
+	Memsize = form.memsize.options[form.memsize.selectedIndex].value;
+	Blocksize = form.blocksize.options[form.blocksize.selectedIndex].value;
+	Cachesize = form.cachesize.options[form.cachesize.selectedIndex].value;
+	Setsize =  form.setsize.options[form.setsize.selectedIndex].value;
+
+	totalnobits = TotalBits(Memsize);
+	offsetnobits = OffsetBits(Blocksize);
+	LowerMiddle = " "
+        //LowerMiddle += "\n<center><strong>Address Bit Partitioning</strong></center><br>\n"
+        if (IsDirect == 1)
+	  {
+	    indexnobits = IndexBitsDirect(Cachesize, Blocksize);
+	    //EgCacheSize = form.egcashsize.options[form.egcashsize.selectedIndex].value;
+	    //Rows = EgCacheSize/Blocksize;
+	    //Columns = EgCacheSize/Rows;
+	    //egindexbits = IndexBitsDirect(EgCacheSize, Blocksize);
+	    //egtagnobits = totalnobits - egindexbits - offsetnobits;
+	   //LowerMiddle += "\n<br><br><H3 align = center>Output</H3>"
+	   //LowerMiddle += MakePattern(offsetnobits, egindexbits, egtagnobits);
+	   //LowerMiddle += "\n"
+	   //LowerMiddle += DrawCache(1,0,Rows,Columns);	
+	    
+	  }
+
+        if (IsSetAssoc == 1)
+	  {
+	    indexnobits = IndexBitsSetAss(Cachesize, Blocksize, Setsize);
+	    //EgCacheSize = form.egcashsize.options[form.egcashsize.selectedIndex].value;
+	    //Rows = EgCacheSize/(Blocksize*Setsize);
+	    //Columns = EgCacheSize/(Rows*2);
+	    //egindexbits = IndexBitsSetAss(EgCacheSize, Blocksize, Setsize);
+	    //egtagnobits = totalnobits - egindexbits - offsetnobits;
+	    //LowerMiddle += "\n<br><br><H3 align = center>Output</H3>"
+	    //LowerMiddle += "\n<br><center>The graphical output is given below.  Each <font color=blue>set</font> consists \n"
+	    //alert();
+	    //LowerMiddle += "of <font color=blue>"+Setsize+"</font> blocks.  The cache is shown by placing adjacent blocks in a set one below the other.  The <font color=red>white</font> cell indicates the Set number.\n  The <font color=red>grey</font> cell indicate the address in decimal notation of that particular memory location in the cache.\n  The <font color=red>cream</font> cells to the right of the grey cells indicate those locations in the main memory that can be placed in that particular memory location in the Cache.<br>\n"
+	    //alert();
+	    //LowerMiddle += MakePattern(offsetnobits, egindexbits, egtagnobits);
+	    //LowerMiddle += "\n"
+	    //alert();
+	    //LowerMiddle += DrawCache(Setsize,1,Rows,Columns);	
+	    //alert();
+	    	   
+	  }
+        
+        tagnobits = totalnobits - indexnobits - offsetnobits;
+        Middle = "\n<center><big><strong>Address Bit Partitioning</strong></big></center>\n"
+	Middle += MakePattern(offsetnobits, indexnobits, tagnobits); 
+ 	Middle += WriteCalculations(totalnobits, offsetnobits, indexnobits, tagnobits, form.memsize, form.cachesize, 	form.blocksize, form.setsize, IsDirect, IsSetAssoc);
+	//Middle += LowerMiddle;
+	Footer = "</BODY></HTML>"
+
+	parent.frames[1].document.write(Upper);
+//	parent.frames[1].docunment.write("sssssss");
+	parent.frames[1].document.write(Middle);
+	parent.frames[1].document.write(Footer);
+	parent.frames[1].document.close()
+}
+		
+</SCRIPT>
+</HEAD>
+
+
+
+
+<body bgcolor="#ffffcc" lang=EN-US link="#3366cc" vlink="#666666"
+style='tab-interval:.5in'> 
+<!--[if gte mso 9]><xml>
+ <v:background id="_x0000_s1056" o:bwmode="white" o:targetscreensize="800,600">
+  <v:fill src="./Personal%20Web%20Page_files/image001.jpg" o:title="indtextb"
+   type="frame"/>
+ </v:background></xml><![endif]-->
+
+<div class=Section1>
+<h2 align = "center">Cache Address Structure </h2>
+
+<h3 align = "center">Memory Cache Parameters</h3>
+
+<FORM method = post>
+
+<p><span style='font-size:12.0pt;font-family:"Times New Roman";
+  color:windowtext;mso-bidi-font-weight:normal'>Memory Size<span
+  style="mso-spacerun: yes"></span>&nbsp;&nbsp;
+<SELECT name = "memsize">
+	<OPTION SELECTED VALUE="262144">256KB</OPTION>
+	<OPTION VALUE="524288">528KB</OPTION>
+	<OPTION VALUE="1048576">1MB</OPTION>
+	<OPTION VALUE="2097152">2MB</OPTION>
+	<OPTION VALUE="4194304">4MB</OPTION>
+	<OPTION VALUE="8388608">8MB</OPTION>
+	<OPTION VALUE="16777216">16MB</OPTION>
+	<OPTION VALUE="33554432">32MB</OPTION>
+</SELECT>
+</p>
+<p><span style='font-size:12.0pt;font-family:"Times New Roman";
+  color:windowtext;mso-bidi-font-weight:normal'>Cache Size<span
+  style="mso-spacerun: yes"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<SELECT name = "cachesize">
+	
+	<OPTION SELECTED VALUE="65536">64KB</OPTION>
+	<OPTION VALUE="131072">128KB</OPTION>
+	<OPTION VALUE="262144">256KB</OPTION>
+	<OPTION VALUE="524288">528KB</OPTION>
+
+</SELECT>
+</p>
+
+<p><span style='font-size:12.0pt;font-family:"Times New Roman";
+  color:windowtext;mso-bidi-font-weight:normal'>Block Size<span
+  style="mso-spacerun: yes"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<SELECT name = "blocksize">
+	<OPTION SELECTED VALUE="2">2B</OPTION>
+	<OPTION VALUE="4">4B</OPTION>
+	<OPTION VALUE="8">8B</OPTION>
+	<OPTION VALUE="16">16B</OPTION>
+	<OPTION VALUE="32">32B</OPTION>
+</SELECT>
+</p>
+
+<h3 align = "center">Cache Scheme</h3>
+
+<p><span style='font-size:12.0pt;font-family:"Times New Roman";
+  color:windowtext;mso-bidi-font-weight:normal'>Direct Mapping<span
+  style="mso-spacerun: yes"></span>
+<INPUT TYPE="radio" value = "directmap" name = "map" checked>
+<br>
+</p>
+<p><span style='font-size:12.0pt;font-family:"Times New Roman";
+  color:windowtext;mso-bidi-font-weight:normal'>Set Associative<span
+  style="mso-spacerun: yes"></span>
+<INPUT TYPE="radio" value = "setmap" name = "map">
+</p>
+
+<p><span style='font-size:12.0pt;font-family:"Times New Roman";
+  color:windowtext;mso-bidi-font-weight:normal'>Set Size<span
+  style="mso-spacerun: yes"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<SELECT name = "setsize">
+	<OPTION VALUE="2">2 blocks</OPTION> 
+	<OPTION VALUE="4" SELECTED>4 blocks</OPTION>
+	<OPTION VALUE="8">8 blocks</OPTION>
+</SELECT>
+</p>
+
+<br>
+<p>
+<center>
+<INPUT TYPE="button" value ="Show" 
+onClick="DisplayCache(this.form)">
+</center>
+<br>
+<center>
+<INPUT TYPE="button" value ="HELP" 
+onClick="newwindow()">
+<br>
+<h4><a href = "frame0.htm" target = "_top">Return to Main Menu</a>
+</h4></center>
+
+</FORM>
+</div>
+</body>
+</HTML>
+
+
+
+
+
+
+

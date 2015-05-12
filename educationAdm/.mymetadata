@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="educationAdm"
+  id="myeclipse.1412659729891"
+  context-root="/HaoXiAdm"
+  j2ee-spec="6.0"
+  archive="educationAdm.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

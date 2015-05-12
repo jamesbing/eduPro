@@ -1,0 +1,170 @@
+
+
+<html>
+<head>
+<title>Untitled Document</title>
+<meta name="Author" content="Geoff Gallo">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#CCFFFF">
+<div align="center">
+  <table width="95%" border="1" bgcolor="#0CFFFE" name="helptable">
+    <tr> 
+      <td colspan="2" > 
+        <div align="center"><b><font size="4">Help page for Cache Simulator</font></b><font size="4"> 
+          <font size="3">( Time Analysis )</font></font></div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p align="left"><b>About:</b> This Cache time analyzer demonstrates Average Memory 
+  Access Time analysis for the cache parameters you specify. Miss rates are provided 
+  for your cache specifications based on data from the course textbook derived 
+  from actual tests using the SPEC benchmark and LRU replacement algorithm. The 
+  analysis is performed for the general case, which means that the analysis does 
+  not accommodate hardware optimizations such as second-level cache, victim buffer, 
+  or prefetching, for example. <b>Optional graphing</b> is available by selecting 
+  a graphing parameter option from the plot menu at the bottom of the control 
+  panel. </p>
+<p align="left"><b>Replacement Policy Assumptions: </b> It is assumed, in the 
+  case of the <u><b>Write Through</b> policy,</u> that on a <b>write</b>, the 
+  memory write (in this case a word write) begins in parallel with the cache write, 
+  thus the time-cost incurred is equal to the greater of Hit Time and Memory Word-Write 
+  Time. Since in the real world the Memory Word-Write Time is always greater than 
+  the Cache Hit Time, the analysis uses your setting for<b> Clocks.Mem.Write</b> 
+  regardless of what you have set for hit time This applies to both write hits 
+  and write misses for <u>Write-Through only</u>. All other equations for all 
+  other policies and instances are clear and need no such explanation.</p>
+<div align="center">
+  <table width="94%" border="1" bgcolor="#0CFFFE" name="helptable">
+    <tr> 
+      <td colspan="3" > 
+        <div align="center"><b><font size="4">HELP reference table of Control 
+          Elements</font></b></div>
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2" bgcolor="#CCCCFF"> 
+        <div align="center"><b><font color="#000033"> Cache Size</font></b></div>
+      </td>
+      <td bgcolor="#E3E7FF" width="77%"> 
+        <p>Select <b>Cache Size</b> in KBytes from menu. Used to determine miss 
+          rate. </p>
+      </td>
+    </tr>
+    <tr> 
+      <td height="30" colspan="2" bgcolor="#C7E8FE"> 
+        <div align="center"><b>Associativity</b></div>
+      </td>
+      <td height="30" width="77%"bgcolor="#C7E8FE">Select <b>Associativity</b> 
+        level from menu, It is the number of sets in the cache. Used to determine 
+        miss rate. </td>
+    </tr>
+    <tr> 
+      <td width="23%" bgcolor="#CCCCFF" colspan="2"> 
+        <div align="center"><b>Block Size</b></div>
+      </td>
+      <td width="77%" bgcolor="#E3E7FF">Select <b>Block Size</b> from the menu. 
+        It specifies the size of each block in words. Used to determine miss rate. 
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2" height="30" bgcolor="#C7E8FE"> 
+        <div align="center"><b>Write Policy</b></div>
+      </td>
+      <td width="77%" bgcolor="#C7E8FE" height="30">Select <b>Write Policy</b>. 
+        Choose Write Back or Write Through, and No Write Allocate or Allocate 
+        on Miss</td>
+    </tr>
+    <tr> 
+      <td colspan="2" height="30" bgcolor="#CCCCFF"> 
+        <div align="center"><b>% Writes</b></div>
+      </td>
+      <td width="77%" height="30" bgcolor="#E3E7FF">Enter the <b>%</b> of memory 
+        accesses that are <b>Writes. </b>Valid inputs are integers 0-99</td>
+    </tr>
+    <tr> 
+      <td colspan="2" bgcolor="#C7E8FE"> 
+        <div align="center"><b>% Dirty Data</b></div>
+      </td>
+      <td width="77%" bgcolor="#C7E8FE"> 
+        <p>Enter the <b>%</b> of <b>Dirty Data</b> representing the chance a block 
+          in cache has been modified but not written back to memory. This number 
+          is not used if you select <b>Write-Through. </b>Valid inputs are integers 
+          0-99</p>
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2" bgcolor="#CCCCFF"> 
+        <div align="center"><b>Clocks Miss Penalty</b></div>
+      </td>
+      <td width="77%" bgcolor="#E3E7FF">Enter the <b>Miss Penalty</b> in clock 
+        cycles. Valid inputs are integers 1-99</td>
+    </tr>
+    <tr> 
+      <td colspan="2" height="41" bgcolor="#C7E8FE"> 
+        <div align="center"><b>Clocks Hit Time</b></div>
+      </td>
+      <td width="77%" bgcolor="#C7E8FE" height="41">Enter the <b>Hit Time in clock 
+        cycles. </b>Valid inputs are integers 1-9</td>
+    </tr>
+    <tr> 
+      <td colspan="2" bgcolor="#CCCCFF">
+        <div align="center"><b>Clocks Mem. Write</b></div>
+      </td>
+      <td width="77%" bgcolor="#E3E7FF"> 
+        <p>Enter the Memory Write time in clock cycles for a single write ( word 
+          write ) to memory.</p>
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2" bgcolor="#C7E8FE" height="40"> 
+        <div align="center"><b>ANALYZE</b></div>
+      </td>
+      <td width="77%" bgcolor="#C7E8FE" height="40">Click on this button to submit 
+        your cache configuration for analysis.</td>
+    </tr>
+    <tr> 
+      <td colspan="2" bgcolor="#CCCCFF"> 
+        <div align="center"><b>Plot Options Menu</b></div>
+      </td>
+      <td width="77%" bgcolor="#E3E7FF">Select option to graph parameter vs. average 
+        memory access time ( Tavg ). Displays graph below analysis table.</td>
+    </tr>
+  </table>
+  <hr>
+</div>
+<table width="95%" border="1" bgcolor="#0CFFFE" name="helptable">
+  <tr> 
+    <td colspan="2" > 
+      <div align="center"><b><font size="4">Tips and Tricks </font></b></div>
+    </td>
+  </tr>
+</table>
+<ul>
+  <li><font size="4"><b>First time users </b></font><u> should start by simply 
+    clicking on the &quot;<b>ANALYZE</b>&quot; button</u> to view results, and 
+    proceed from there.</li>
+  <li><font size="4"><b>Graphs</b></font>: If you select a plot option. note that 
+    you can <u>move the cursor over the plotted points </u>to see exact values 
+    displayed.</li>
+  <li> <font size="4"><b>Graphs</b>:</font> <b><u>If you re-size, reload.</u></b> 
+    If you selected a plot option and clicked ''ANALYZE'' , your plot will be 
+    displayed ( below analysis table). If you re-size your browser window at this 
+    point the plot output window will probably become distorted. If this happens, 
+    you may click the ''ANALYZE'' button again, or choose 'RELOAD' from your browser's 
+    menu, either one will reload the plot correctly into the current browser window 
+    frame-size.</li>
+</ul>
+<hr>
+<blockquote>
+  <p><font size="+2"><font color="#0000CC" size="+1"><i><b><font size="4">Spend 
+    some time with each configuration, changing parameters as you like, and inspecting 
+    the results in the output window. </font></b></i></font></font></p>
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

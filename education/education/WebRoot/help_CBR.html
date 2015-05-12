@@ -1,0 +1,253 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta name="Author" content="Geoff Gallo">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#CCFFFF">
+<div align="center">
+  <table width="95%" border="1" bgcolor="#0CFFFE" name="helptable">
+    <tr> 
+      <td colspan="2" > 
+        <div align="center"><b><font size="4">Help page for Cache Simulator</font></b><font size="4"> 
+          <font size="3">( address mapping )</font></font></div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p align="left"><b><font size="4">About</font></b>: The simulator emulates small 
+  sized caches based on a user-input cache model and displays the cache contents 
+  at the end of the simulation cycle based on an input sequence which is entered 
+  by the user, or randomly generated if so selected. Cache content is treated 
+  as one word per block, and the range of randomly generated addresses is the 
+  physical address space which is set to span 4 times the cache size in blocks. 
+  Output includes Cache content display, input query sequence event trace, simulation 
+  statistics, and also Multi-Tasking simulation if selected. Hexadecimal format, 
+  user-input or random query sequences, sequence repeat cycle control (helpful 
+  for viewing cache contents a few random queries at a time), show tags, and sequence 
+  length limiting are all optional. Cache size, set associativity, and replacement 
+  policy are menu selectable. You may simply click the 'SHOW CACHE' button on 
+  startup default settings after entering a query sequence, or selecting ''Use 
+  Random'', to begin. </p>
+<div align="center">
+  <table width="94%" border="1" bgcolor="#0CFFFE" name="helptable">
+    <tr> 
+      <td colspan="3" > 
+        <div align="center"><b><font size="4">HELP reference table of Control 
+          Elements</font></b></div>
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2" bgcolor="#CCCCFF"> 
+        <div align="center"><b><font color="#000033"> Cache Size</font></b></div>
+      </td>
+      <td bgcolor="#E3E7FF" width="77%"> 
+        <p>Select <b>Cache Size</b> in blocks from menu. Cache size cannot be 
+          set less than #Sets in cache (associativity level). BlockSize is fixed 
+          at one word. </p>
+      </td>
+    </tr>
+    <tr> 
+      <td height="30" colspan="2" bgcolor="#C7E8FE"> 
+        <div align="center"><b> # Sets in cache </b></div>
+      </td>
+      <td height="30" width="77%"bgcolor="#C7E8FE">Select <b>Associativity</b> 
+        level from menu, It is the number of sets in the cache. The Associativity 
+        level must be less than or equal to the Cache Size#</td>
+    </tr>
+    <tr> 
+      <td bgcolor="#C7E8FE" colspan="2"> 
+        <div align="right">if (#Sets&lt;SizeBlocks ) </div>
+      </td>
+      <td width="77%" bgcolor="#D7F5FF"> - (#Sets) = <u>N-way Set Associative 
+        cache</u></td>
+    </tr>
+    <tr> 
+      <td bgcolor="#C7E8FE" colspan="2"> 
+        <div align="right">if (#Sets=SizeBlocks) </div>
+      </td>
+      <td width="77%" bgcolor="#D7F5FF"><u> - Direct Mapped cache</u></td>
+    </tr>
+    <tr> 
+      <td bgcolor="#C7E8FE" colspan="2"> 
+        <div align="right">if (#Sets=1;) </div>
+      </td>
+      <td width="77%" bgcolor="#D7F5FF"><u> - Fully Associative cache</u></td>
+    </tr>
+    <tr> 
+      <td colspan="3" bgcolor="#CCCCFF"> 
+        <div align="left"><u><b>Replacement Policy</b> ( for non-compulsory cache 
+          misses )</u></div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="23%" bgcolor="#CCCCFF" colspan="2"> 
+        <div align="center"></div>
+        <div align="center"><u><b>Rand</b></u>om</div>
+      </td>
+      <td width="77%" bgcolor="#E3E7FF"> Select destination block in set for<b> 
+        replacement at random</b></td>
+    </tr>
+    <tr> 
+      <td width="23%" bgcolor="#CCCCFF" height="30" colspan="2"> 
+        <div align="center"></div>
+        <div align="center"><b><u>L</u></b>east<b> <u>R</u></b>ecently <b><u>U</u></b>sed</div>
+      </td>
+      <td width="77%" bgcolor="#E3E7FF" height="30">:Select destination block 
+        in set for <b>replacement by age since most recent access</b> ( replace 
+        oldest read/write)</td>
+    </tr>
+    <tr> 
+      <td width="23%" bgcolor="#CCCCFF" height="30" colspan="2"> 
+        <div align="center"></div>
+        <div align="center"><u><b>F</b></u>irst <u><b>I</b></u>n - <u><b>F</b></u>irst 
+          <u> <b>O</b></u>ut</div>
+      </td>
+      <td width="77%" bgcolor="#E3E7FF" height="30">Select destination block in 
+        set for <b>replacement by age since most recent update</b> ( replace oldest 
+        write )</td>
+    </tr>
+    <tr> 
+      <td colspan="2" height="30" bgcolor="#C7E8FE"> 
+        <div align="center"><b>Enter Query Sequence</b></div>
+      </td>
+      <td width="77%" bgcolor="#CDFFFF" height="30"><u>If not Use Random</u>, 
+        then manually <b>enter your query sequence here</b>. Your values should 
+        be entered space-delimited. Input will be interpreted as hexadecimal if<b> 
+        Use Hex</b> is selected.</td>
+    </tr>
+    <tr> 
+      <td colspan="2" height="30" bgcolor="#CCCCFF"> 
+        <div align="center"><b>Use Random</b></div>
+      </td>
+      <td width="77%" height="30" bgcolor="#E3E7FF">Select checkbox<b> Random 
+        generation of sequence</b> of #(Limit Query) addresses as cache query. 
+        Disregards any entries in input-box</td>
+    </tr>
+    <tr> 
+      <td colspan="2" bgcolor="#C7E8FE"> 
+        <div align="center"><b>Use Hex</b></div>
+      </td>
+      <td width="77%" bgcolor="#CDFFFF">Select checkbox to change input/output 
+        format to <b>hexadecimal. </b>Note that the # Cycles and Length fields 
+        are always decimal inputs,<b> </b>otherwise<b> Use Hex</b> causes all 
+        Input / Output to be interpreted / given in hexadecimal format.</td>
+    </tr>
+    <tr> 
+      <td colspan="2" bgcolor="#CCCCFF"> 
+        <div align="center"><b>Limit Query</b></div>
+      </td>
+      <td width="77%" bgcolor="#E3E7FF"> Select checkbox to limit length of random 
+        sequence or user-input sequence to the length specified by the value in 
+        the Limit Query<u> Length</u> field.</td>
+    </tr>
+    <tr> 
+      <td colspan="2" height="41" bgcolor="#CCCCFF"> 
+        <div align="center"><b>Limit Query # Length</b></div>
+      </td>
+      <td width="77%" bgcolor="#E3E7FF" height="41"> 
+        <p>Sets length of random query sequence, or<b> limits length</b> of user 
+          - input query sequence in input window. The <u>Limit Query checkbox 
+          must be selected</u> also.</p>
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2" bgcolor="#C7E8FE"> 
+        <div align="center"><b>Show Cache</b></div>
+      </td>
+      <td width="77%" bgcolor="#CDFFFF"><b>View cache</b> as configured, shows 
+        effect of query sequence on cache, outputs query event sequence with resulting 
+        actions with the cache, with analysis.</td>
+    </tr>
+    <tr> 
+      <td colspan="2" bgcolor="#CCCCFF"> 
+        <div align="center"><b>Set Repeat</b></div>
+      </td>
+      <td width="77%" bgcolor="#E3E7FF"><b>To repeat an input query sequence </b>through 
+        N iterations, Set Repeat N Cycles. Will show cache content output at end 
+        of each cycle.</td>
+    </tr>
+    <tr> 
+      <td colspan="2" bgcolor="#CCCCFF"> 
+        <div align="center">(Set Repeat)<b> # Cycles</b></div>
+      </td>
+      <td width="77%" bgcolor="#E3E7FF"> 
+        <p> <b># Cycles</b> sets the number of times the cache will run through 
+          Query Sequences set by <b>Limit Query and Length</b>, where <b>Use Random</b> 
+          changes the query sequence each <b>cycle</b>, or<b> if not Use Random</b> 
+          then each cycle repeats the user input sequence from the Enter Query 
+          Sequence input textfield area.</p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" bgcolor="#C7E8FE">
+        <div align="center"><b>Use Multi-Tasking</b></div>
+      </td>
+      <td width="77%" bgcolor="#CDFFFF">Select <b>Multi-Tasking</b> to simulate 
+        one cache as it is switched between two processes, one for each cycle 
+        in <b># Cycles</b>. If you Select Multi Tasking, it is best used with 
+        <b>Use Random</b> selected, with <b>Limit Query #Length</b> set.</td>
+    </tr>
+    <tr> 
+      <td colspan="2" bgcolor="#CCCCFF"> 
+        <div align="center"><b>Show Tags</b></div>
+      </td>
+      <td width="77%" bgcolor="#E3E7FF">Select <b>show tags</b> to show the tags 
+        in the cache contents output table. Tags are shown in red binary, with 
+        index field omitted for clarity. No offset field shown either because 
+        this simulator uses one word per block</td>
+    </tr>
+  </table>
+  <hr>
+</div>
+<table width="95%" border="1" bgcolor="#0CFFFE" name="helptable">
+  <tr> 
+    <td colspan="2" > 
+      <div align="center"><b><font size="4">Tips and Tricks </font></b></div>
+    </td>
+  </tr>
+</table>
+<ul>
+  <li><font size="4"><b>First time users </b></font><u> should start by simply 
+    clicking on the &quot;SHOW CACHE&quot;</u> button after entering a query sequence, 
+    or selecting ''Use Random'', and proceed from there.</li>
+  <li><b><font size="4">Single stepping </font></b> <u>through a query sequence</u> 
+    can be done by entering entire sequence in the &quot;<b>Enter a query sequence</b>&quot; 
+    input field. Next select <b>Limit Query </b>and set <b>Limit Query Length</b> 
+    to 1. Next click on the SHOW CACHE button, The output window will contain 
+    results for the first Query. (*) Change <b>Limit Query Length</b> to the next 
+    value ( add 1 to length ) and Click on<b> SHOW CACHE</b>. Repeat from (*) 
+    until done. </li>
+  <li><font size="4"><b>Sequence-Stepping</b></font>, with<u> <b>Multi-Tasking 
+    not</b> selected</u>, and <u>#Cycles set to greater than 1</u>, with <b><u>Use 
+    Random </u></b><u>selected</u> (preferred), the simulator will show cache 
+    contents and results for each Cycle, <u>with each cycle having <b>#Length 
+    </b>entries</u>. If Random not selected, each cycle repeats on the Entered 
+    Query Sequence. (up to #Length).</li>
+  <li><font size="4"><b>Multi - Tasking </b></font>Simulates a multiprocessing 
+    context in which the processor switches between two tasks A and B, and the 
+    Cache Content, output each cycle, reflects the most recent query sequence 
+    on the cache. By noticing that <b>Task A</b> and<u> Task B </u>are represented 
+    by<b> color</b> and<u> grayscale</u> respectively, you can visualize the two 
+    tasks overwriting each others cache entries with each cycle. Cache Sequence 
+    Results are cumulative with each cycle of Multi-Tasking, and are representative 
+    of a multi-tasking environment in which two tasks share the same address and 
+    data space. For your first try; With Multi-Tasking selected, you should also 
+    select Set Repeat to some small number, Use Random and Limit Query should 
+    both be selected, and set the limit # to some value, preferably about or under 
+    the Cache Size in Blocks. 
+    <hr>
+  </li>
+</ul>
+<blockquote>
+  <p><font size="+2"><font color="#0000CC" size="+1"><i><b>Spend some time with 
+    each configuration, changing parameters as you like, and inspecting the results 
+    in the output window.</b></i><b><i> Exploration of the options and resulting 
+    output will enhance your learning.</i></b></font></font></p>
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
